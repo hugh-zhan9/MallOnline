@@ -1,7 +1,7 @@
 package com.hugh.mallonline.ware.dao;
 
-import com.hugh.mallonline.member.entity.WareInfoEntity;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.hugh.mallonline.ware.entity.WareInfoEntity;
 import org.apache.ibatis.annotations.Mapper;
 
 /**
