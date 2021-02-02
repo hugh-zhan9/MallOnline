@@ -1,0 +1,15 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: testGateWay
+          uri: https://www.baidu.com
+          predicates:
+            - Query=url, baidu
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+  application:
+    name: mallonline-gateway
+server:
+  port: 88
