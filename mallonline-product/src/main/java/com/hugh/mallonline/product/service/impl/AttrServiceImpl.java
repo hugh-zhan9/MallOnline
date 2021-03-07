@@ -1,6 +1,5 @@
 package com.hugh.mallonline.product.service.impl;
 
-import com.baomidou.mybatisplus.extension.conditions.query.QueryChainWrapper;
 import com.hugh.mallonline.product.dao.AttrAttrgroupRelationDao;
 import com.hugh.mallonline.product.dao.AttrGroupDao;
 import com.hugh.mallonline.product.dao.CategoryDao;
