@@ -9,6 +9,7 @@ import java.util.Date;
 import com.hugh.common.utils.valid.AddGroup;
 import com.hugh.common.utils.valid.ListValue;
 import com.hugh.common.utils.valid.UpdateGroup;
+import com.hugh.common.utils.valid.UpdateStatusGroup;
 import lombok.Data;
 import org.hibernate.validator.constraints.URL;
 
@@ -30,8 +31,8 @@ public class BrandEntity implements Serializable {
 	 * 品牌id
 	 */
 	@TableId
-	@Null(message = "新增时必须为空", groups= {UpdateGroup.class})
-	@NotNull(message = "修改时不能为空", groups = {AddGroup.class})	// groups参数进行分组校验；
+	@Null(message = "新增时必须为空", groups= {AddGroup.class})
+	@NotNull(message = "修改时不能为空", groups = {UpdateGroup.class})	// groups参数进行分组校验；
 	private Long brandId;
 	/**
 	 * 品牌名
@@ -57,13 +58,14 @@ public class BrandEntity implements Serializable {
 	 * 3. 关联自定义的校验注解和校验器
 	 */
 	// @Pattern()
-	@ListValue(values = {0,1}, groups = {AddGroup.class, UpdateGroup.class})
+	@NotNull(groups = {AddGroup.class, UpdateStatusGroup.class})
+	@ListValue(values = {0,1}, groups = {AddGroup.class, UpdateStatusGroup.class})
 	private Integer showStatus;
 	/**
 	 * 检索首字母
 	 */
 	@NotEmpty(groups = {AddGroup.class})
-	@Pattern(regexp = "/^[a-zA-Z]$/", message = "检索首字母必须是一个字母", groups = {UpdateGroup.class, AddGroup.class})
+	@Pattern(regexp = "^[a-zA-Z]$", message = "检索首字母必须是一个字母", groups = {UpdateGroup.class, AddGroup.class})
 	private String firstLetter;
 	/**
 	 * 排序

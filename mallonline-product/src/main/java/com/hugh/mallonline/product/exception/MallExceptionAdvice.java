@@ -32,8 +32,4 @@ public class MallExceptionAdvice {
         return R.error(BizCodeEnum.VAILD_EXCEPTION.getCode(),BizCodeEnum.VAILD_EXCEPTION.getMsg()).put("data",errorMap);
     }
 
-    @ExceptionHandler(value = Throwable.class)
-    public R handleException(Throwable throwable){
-        return R.error(BizCodeEnum.UNKNOW_EXCEPPTION.getCode(),BizCodeEnum.UNKNOW_EXCEPPTION.getMsg());
-    }
 }

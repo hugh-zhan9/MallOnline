@@ -1,5 +1,6 @@
 package com.hugh.mallonline.product;
 
+import com.hugh.mallonline.product.dao.CategoryBrandRelationDao;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,5 +16,11 @@ import java.io.InputStream;
 @SpringBootTest
 public class MallonlineProductApplicationTests {
 
+    @Resource
+    CategoryBrandRelationDao categoryBrandRelationDao;
 
+    @Test
+    public void testMethod(){
+        categoryBrandRelationDao.updateCategory(225L,"手机2");
+    }
 }
