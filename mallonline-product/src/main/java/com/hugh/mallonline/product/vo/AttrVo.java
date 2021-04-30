@@ -9,7 +9,7 @@ import java.io.Serializable;
  * Created by hugh on 2021/3/4
  */
 @Data
-public class AttrVO implements Serializable {
+public class AttrVo implements Serializable {
     private static final long serialVersionUID = 1L;
     /**
      * 属性id

@@ -1,4 +1,4 @@
-package com.hugh.common.utils.valid;
+package com.hugh.common.valid;
 
 /**
  * Created by hugh on 2021/3/3

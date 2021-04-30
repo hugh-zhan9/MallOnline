@@ -3,7 +3,8 @@ package com.hugh.mallonline.product.service;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.hugh.common.utils.PageUtils;
 import com.hugh.mallonline.product.entity.AttrEntity;
-import com.hugh.mallonline.product.vo.AttrVO;
+import com.hugh.mallonline.product.vo.AttrResponseVo;
+import com.hugh.mallonline.product.vo.AttrVo;
 
 import java.util.Map;
 
@@ -18,8 +19,13 @@ public interface AttrService extends IService<AttrEntity> {
 
     PageUtils queryPage(Map<String, Object> params);
 
-    void saveAttr(AttrVO attr);
+    void saveAttr(AttrVo attr);
 
-    PageUtils queryBaseAttrPage(Map<String, Object> params, Long catelogId);
+    PageUtils queryBaseAttrPage(String type, Map<String, Object> params, Long catelogId);
+
+    AttrResponseVo getAttrInfo(Long attrId);
+
+    void updateAttr(AttrVo attr);
+
 }
 

@@ -1,4 +1,4 @@
-package com.hugh.common.utils.exception;
+package com.hugh.common.exception;
 
 /**
  * Created by hugh on 2021/3/3

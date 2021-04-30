@@ -1,15 +1,13 @@
 package com.hugh.mallonline.product.controller;
 
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.Map;
 
 //import org.apache.shiro.authz.annotation.RequiresPermissions;
-import com.hugh.common.utils.valid.AddGroup;
-import com.hugh.common.utils.valid.UpdateGroup;
-import com.hugh.common.utils.valid.UpdateStatusGroup;
+import com.hugh.common.valid.AddGroup;
+import com.hugh.common.valid.UpdateGroup;
+import com.hugh.common.valid.UpdateStatusGroup;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -21,8 +19,6 @@ import com.hugh.mallonline.product.entity.BrandEntity;
 import com.hugh.mallonline.product.service.BrandService;
 import com.hugh.common.utils.PageUtils;
 import com.hugh.common.utils.R;
-
-import javax.validation.Valid;
 
 
 /**

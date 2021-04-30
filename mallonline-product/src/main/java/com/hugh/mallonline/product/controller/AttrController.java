@@ -4,7 +4,8 @@ import java.util.Arrays;
 import java.util.Map;
 
 //import org.apache.shiro.authz.annotation.RequiresPermissions;
-import com.hugh.mallonline.product.vo.AttrVO;
+import com.hugh.mallonline.product.vo.AttrResponseVo;
+import com.hugh.mallonline.product.vo.AttrVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -28,9 +29,9 @@ public class AttrController {
     @Autowired
     private AttrService attrService;
 
-    @GetMapping("base/list/{catelogId}")
-    public R baseAttrList(@RequestParam Map<String, Object> params, @PathVariable("catelogId") Long catelogId){
-        PageUtils page = attrService.queryBaseAttrPage(params,catelogId);
+    @GetMapping("{attrType}/list/{catelogId}")
+    public R baseAttrList(@PathVariable("attrType") String type, @RequestParam Map<String, Object> params, @PathVariable("catelogId") Long catelogId){
+        PageUtils page = attrService.queryBaseAttrPage(type, params, catelogId);
         return R.ok().put("page",page);
     }
 
@@ -52,9 +53,9 @@ public class AttrController {
     @RequestMapping("/info/{attrId}")
     //@RequiresPermissions("product:attr:info")
     public R info(@PathVariable("attrId") Long attrId){
-		AttrEntity attr = attrService.getById(attrId);
-
-        return R.ok().put("attr", attr);
+		// AttrEntity attr = attrService.getById(attrId);
+        AttrResponseVo respVo = attrService.getAttrInfo(attrId);
+        return R.ok().put("attr", respVo);
     }
 
     /**
@@ -62,7 +63,7 @@ public class AttrController {
      */
     @RequestMapping("/save")
     //@RequiresPermissions("product:attr:save")
-    public R save(@RequestBody AttrVO attr){
+    public R save(@RequestBody AttrVo attr){
 		attrService.saveAttr(attr);
 
         return R.ok();
@@ -73,8 +74,8 @@ public class AttrController {
      */
     @RequestMapping("/update")
     //@RequiresPermissions("product:attr:update")
-    public R update(@RequestBody AttrEntity attr){
-		attrService.updateById(attr);
+    public R update(@RequestBody AttrVo attr){
+		attrService.updateAttr(attr);
 
         return R.ok();
     }

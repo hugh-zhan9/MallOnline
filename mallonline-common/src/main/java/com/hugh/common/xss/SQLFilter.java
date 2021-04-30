@@ -6,7 +6,7 @@
  * 版权所有，侵权必究！
  */
 
-package com.hugh.common.utils.xss;
+package com.hugh.common.xss;
 
 import com.hugh.common.utils.RRException;
 import org.apache.commons.lang.StringUtils;

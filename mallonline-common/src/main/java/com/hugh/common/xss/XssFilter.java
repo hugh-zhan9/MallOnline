@@ -6,7 +6,7 @@
  * 版权所有，侵权必究！
  */
 
-package com.hugh.common.utils.xss;
+package com.hugh.common.xss;
 
 import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;

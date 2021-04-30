@@ -4,12 +4,11 @@ import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 
 import java.io.Serializable;
-import java.util.Date;
 
-import com.hugh.common.utils.valid.AddGroup;
-import com.hugh.common.utils.valid.ListValue;
-import com.hugh.common.utils.valid.UpdateGroup;
-import com.hugh.common.utils.valid.UpdateStatusGroup;
+import com.hugh.common.valid.AddGroup;
+import com.hugh.common.valid.ListValue;
+import com.hugh.common.valid.UpdateGroup;
+import com.hugh.common.valid.UpdateStatusGroup;
 import lombok.Data;
 import org.hibernate.validator.constraints.URL;
 

@@ -1,4 +1,4 @@
-package com.hugh.common.utils.xss;
+package com.hugh.common.xss;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;

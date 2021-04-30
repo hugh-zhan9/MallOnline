@@ -1,4 +1,4 @@
-package com.hugh.common.utils.valid;
+package com.hugh.common.valid;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
